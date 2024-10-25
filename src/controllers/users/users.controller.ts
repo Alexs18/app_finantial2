@@ -38,5 +38,32 @@ export class UsersController {
     deleteuser(){
 
     }
+    @Post('/restorepassword')
+    restorepassword(
+        @Body() Body:any
+    ){
+        const {sendmail} = Body
+        return this.UserServices.restorepassword(sendmail);
+    }
+    @Post('/validatecode')
+    async validatecode(
+        @Body() body: any
+    ){
+      const {mail, code} = body;
+      return await this.UserServices.validatecoderestorepassword(mail, code)  
+    }
+    @Put('/changepassword')
+    async changepaasword(
+        @Body() bodeychange:USER_LOGIN
+    ){
+        const {mail,password} = bodeychange
+        return await this.UserServices.changepassword(mail,password);
+    }
+    @Post('/generatepassword')
+    async generatepassword(
+        @Body() body:any
+    ){
+        return await this.UserServices.generatepassword(body.mail)
+    }
 
 }
