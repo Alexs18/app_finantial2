@@ -14,6 +14,8 @@ import { IncomeService } from './services/income/income.service';
 import { ExpensesModule } from './modules/expenses/expenses.module';
 import { IncomeModule } from './modules/income/income.module';
 import { MailerModule } from '@nestjs-modules/mailer';
+import { MovementController } from './controllers/movement/movement.controller';
+import { MovementService } from './services/movement/movement.service';
 
 // to diference way to access envirorments
 
@@ -46,7 +48,7 @@ import { MailerModule } from '@nestjs-modules/mailer';
     ExpensesModule,
     IncomeModule
   ],
-  controllers: [AppController, IncomeController, ExpensesController],
-  providers: [AppService, ExpensesService, IncomeService],
+  controllers: [AppController, IncomeController, ExpensesController, MovementController],
+  providers: [AppService, ExpensesService, IncomeService, MovementService],
 })
 export class AppModule {}
