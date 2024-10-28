@@ -37,7 +37,7 @@ export class IncomeController {
 
     @Get('/gettypeincome')
     gettypeincome(){
-
+        return this.incomeservices.getTypeIncome();
     }
 
     @Put('/updatetypeincome')
