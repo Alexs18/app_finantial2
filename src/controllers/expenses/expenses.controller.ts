@@ -17,7 +17,7 @@ export class ExpensesController {
 
     @Get('/getexpenses')
     getexpenses(){
-
+        
     }
 
     @Put('/updateexpenses')
@@ -34,8 +34,6 @@ export class ExpensesController {
     createtypeexpenses(){
 
     }
-
-    @UseGuards(AuthGuard)
     @Get('/gettypeexpenses')
     gettypeexpenses(){
 
